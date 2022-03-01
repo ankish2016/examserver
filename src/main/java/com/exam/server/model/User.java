@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,7 +31,7 @@ import lombok.Setter;
 public class User implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long user_id;
 	private String userName;
 	private String password;
 	private String firstName;
@@ -72,4 +73,5 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return this.enable;
 	}
+
 }

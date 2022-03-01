@@ -64,12 +64,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User updateUserById(User user) {
-		 User user2 = this.userRepository.findById(user.getId()).get();
+		 User user2 = this.userRepository.findById(user.getUser_id()).get();
 		      user2.setFirstName(user.getFirstName());
 		      user2.setLastName(user.getLastName());
 		      user2.setEmail(user.getEmail());
 		      user2.setPhone(user.getPhone());
-		      user2.setId(user.getId());
+		      user2.setUser_id(user.getUser_id());
 		      user2.setPassword(user.getPassword());
 		      user2.setProfile(user.getProfile());
 		 return this.userRepository.save(user2);
