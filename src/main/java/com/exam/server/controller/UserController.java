@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import com.exam.server.helper.UserNotFoundException;
+import com.exam.server.helper.UserFoundException;
 import com.exam.server.model.Role;
 import com.exam.server.model.User;
 import com.exam.server.model.UserRole;
@@ -57,8 +57,8 @@ public class UserController {
 		return this.userService.updateUserById(user);
 	 }
 	 
-	 @ExceptionHandler(UserNotFoundException.class)
-	 public ResponseEntity<?> ExceptionHandler(UserNotFoundException ex)
+	 @ExceptionHandler(UserFoundException.class)
+	 public ResponseEntity<?> ExceptionHandler(UserFoundException ex)
 	 {
 		 
 		return ResponseEntity.ok(ex);
